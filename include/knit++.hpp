@@ -1,8 +1,8 @@
 #pragma once
 
-#include "detail/macros.hpp"
+#include "helpers/macros.hpp"
 
-Knitpp_Export
-void knitpp_();
+namespace knitpp 
+{
 
-#undef KnitppExport
+} //namespace knitpp

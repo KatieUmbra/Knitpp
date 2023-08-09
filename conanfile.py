@@ -5,11 +5,12 @@ from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
 class knitpp__Recipe(ConanFile):
     name = "knit++"
     version = "0.1-dev"
+    package_type = "static-library"
 
     # Optional metadata
     license = "MIT"
     author = "Kanwi katherine@kaytea.dev"
-    url = "<Package recipe repository url here, for issues about the package>"
+    url = "https://github.com/KatieUmbra/Knitpp"
     description = "Kanwi's Unit Testing Library For C++"
     topics = ("Unit Testing", "Testing", "Verification", "Unit")
 
@@ -18,7 +19,7 @@ class knitpp__Recipe(ConanFile):
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
 
-    exports_sources = "CMakeLists.txt", "src/*", "include/*", "include/detail/*"
+    exports_sources = "CMakeLists.txt", "src/*", "include/*", "include/helpers/*"
 
     def config_options(self):
         if self.settings.os == "Windows":

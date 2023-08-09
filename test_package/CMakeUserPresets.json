@@ -4,6 +4,7 @@
         "conan": {}
     },
     "include": [
-        "/home/Katie/Development/Knit++/test_package/build/clang-16-x86_64-23-debug/generators/CMakePresets.json"
+        "/home/Katie/Development/Knit++/test_package/build/clang-16-x86_64-23-debug/generators/CMakePresets.json",
+        "/home/Katie/Development/Knit++/test_package/build/clang-16-x86_64-23-release/generators/CMakePresets.json"
     ]
 }
