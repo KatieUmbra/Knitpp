@@ -1,4 +1,5 @@
 #include "test_mgr.hpp"
+#include "detail/thread.hpp"
 #include <iostream>
 
 namespace knitpp 
@@ -9,7 +10,8 @@ namespace knitpp
 	}
 	TestManager::TestManager(TestManager&& moved) noexcept
 		:m_tests(std::move(moved.m_tests))
-	{}
+	{
+	}
 	TestManager::TestManager(Vector<Function<void()>>&& functions)
 		:m_tests(functions)
 	{}
@@ -36,14 +38,16 @@ namespace knitpp
 	}
 	void TestManager::runTests()
 	{
+		auto threadId = thread::getThreadId();
 		int iter = 0;
 		for (const auto& test : this->m_tests)
 		{
-			iter++;
-			std::cout << "Running Test " << iter << ":" << '\n';
+			std::cout << "Running Test " << (iter + 1) << ":" << '\n';
 			std::cout << "============" << '\n' << '\n';
 			test();
 			std::cout << '\n' << "============" << '\n' << '\n';
+			iter++;
+			thread::threadCurrentId[threadId]++;
 		}
 	}
 } //namespace knitpp

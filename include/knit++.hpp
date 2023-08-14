@@ -1,7 +1,5 @@
 #pragma once
 
-#include "helpers/macros.hpp"
-
 namespace knitpp 
 {
 
