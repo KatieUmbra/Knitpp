@@ -47,7 +47,7 @@ namespace knitpp
 			test();
 			std::cout << '\n' << "============" << '\n' << '\n';
 			iter++;
-			thread::threadCurrentId[threadId]++;
+			thread::ThreadData::setThreadCount(threadId);
 		}
 	}
 } //namespace knitpp

@@ -8,6 +8,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(SOURCES 
 	src/knit++.cpp
 	src/test_mgr.cpp
+	src/thread.cpp
 	)
 
 set(PUBLIC_HEADERS
@@ -21,7 +22,7 @@ set(PUBLIC_PRECOMPILED_HEADERS
 	)
 
 set(PRIVATE_HEADERS
-	
+	include/detail/thread.hpp
 	)
 
 add_library(knit++ ${SOURCES} ${PUBLIC_HEADERS} ${PRIVATE_HEADERS})
